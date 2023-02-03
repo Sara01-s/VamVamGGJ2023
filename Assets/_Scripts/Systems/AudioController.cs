@@ -7,19 +7,12 @@ namespace VamVamGGJ {
     public sealed class AudioController : Singleton<AudioController> {
 
         [SerializeField] private AudioMixer _mixer;
-        public static float[] _spectrumSamples = new float[512];
-        public static float[] _frequencyBand = new float[8];
+        [SerializeField] private AudioSource _musicSource;
+        [SerializeField] private AudioSource _sfxSource;
 
-        public AudioSource MusicSource { get; private set; }
+        private const float MIN_VOLUME_VALUE = 0.00001F;
 
-        private AudioSource _sfxSource;
-
-        protected override void Awake() {
-            base.Awake();
-
-            MusicSource = GetComponentInChildren<AudioSource>();
-            _sfxSource = GetComponentInChildren<AudioSource>();
-        }
+        protected override void Awake() => base.Awake();
 
 
         // AUDIO FACADE //
@@ -27,8 +20,8 @@ namespace VamVamGGJ {
         public void PlaySFX(AudioClip clip) => _sfxSource.PlayOneShot(clip);
         
         public void PlayMusic(AudioClip musicClip, bool loop) {
-            MusicSource.loop = loop;
-            MusicSource.PlayOneShot(musicClip);
+            _musicSource.loop = loop;
+            _musicSource.PlayOneShot(musicClip);
         }
 
         // Master
@@ -38,17 +31,17 @@ namespace VamVamGGJ {
 
         // Music
         public void ChangeMusicVolume(float value) {
-            if (value <= 0.00001) 
-                MusicSource.mute = true;
+            if (value <= MIN_VOLUME_VALUE) 
+                _musicSource.mute = true;
             else {
-                MusicSource.mute = false;
+                _musicSource.mute = false;
                 _mixer.SetFloat("MusicVolume", Mathf.Log10(value) * 20);           
             }
         }
 
         // SFX
         public void ChangeSFXVolume(float value) {
-            if (value <= 0.00001)
+            if (value <= MIN_VOLUME_VALUE)
                 _sfxSource.mute = true;
             else {
                 _sfxSource.mute = false;
@@ -56,7 +49,7 @@ namespace VamVamGGJ {
             }
         }
 
-        public void ToggleMusic() => MusicSource.mute = !MusicSource.mute;
+        public void ToggleMusic() => _musicSource.mute = !_musicSource.mute;
         public void ToggleSFX() => _sfxSource.mute = !_sfxSource.mute;
 
     }
