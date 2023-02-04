@@ -6,7 +6,6 @@ namespace VamVamGGJ {
     internal sealed class TextWeaponSystem : MonoBehaviour {
 
         private StringBuilder _playerInputSB = new StringBuilder();
-        private WordsData _wordsData;
 
         private const char BACKSPACE = '\b';
         private const char RETURN = '\r';
