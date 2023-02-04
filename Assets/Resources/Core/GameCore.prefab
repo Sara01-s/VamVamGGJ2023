@@ -430,7 +430,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 400, y: 50}
+  m_SizeDelta: {x: 450, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3197981045188404858
 CanvasRenderer:
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back to the oil days
+  m_text: Involution
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -738,7 +738,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5597725482455424210
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2099,19 +2099,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainMenu: {fileID: 2204122445692097403}
-  _levelSelection: {fileID: 0}
+  _settingsMenu: {fileID: 0}
   _pauseMenu: {fileID: 0}
-  _failMenu: {fileID: 0}
-  _scoreMenu: {fileID: 0}
-  _masterSlider: {fileID: 0}
-  _musicSlider: {fileID: 0}
-  _sfxSlider: {fileID: 0}
-  _bindingZDisplayText: {fileID: 0}
-  _startRebindingZButton: {fileID: 0}
-  _waitingForInputZButton: {fileID: 0}
-  _bindingsXDisplayText: {fileID: 0}
-  _startRebindingXButton: {fileID: 0}
-  _waitingForInputXButton: {fileID: 0}
 --- !u!1 &5885202594929622425
 GameObject:
   m_ObjectHideFlags: 0
