@@ -8,13 +8,13 @@ namespace VamVamGGJ {
     
     public sealed class LevelLoader : Singleton<LevelLoader> {
 
-        [Header("Child UI")]
-        [SerializeField] private GameObject _levelManagerUI;
+        [Header("Dependencies")]
         [SerializeField] private Image _progressBarImage;
 
         private List<AsyncOperation> _scenesToLoad = new List<AsyncOperation>();
 
         protected override void Awake() => base.Awake();
+
         
         public void LoadScene(int index, GameState newState) {
 
@@ -24,6 +24,7 @@ namespace VamVamGGJ {
 
             StartCoroutine(LoadingScreen(newState));
         }
+
 
         private IEnumerator LoadingScreen(GameState newState) {
             

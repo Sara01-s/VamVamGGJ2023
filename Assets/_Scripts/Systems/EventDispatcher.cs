@@ -2,15 +2,16 @@ using System;
 
 namespace VamVamGGJ {
 
-    public sealed class EventDispatcher : Singleton<EventDispatcher> {
+    internal sealed class EventDispatcher : Singleton<EventDispatcher> {
         
         protected override void Awake() => base.Awake();
 
         // Input Manager //
-        public static Action OnTogglePause;
+        internal static Action OnTogglePause;
+        internal static Action<string> OnTextSubmitted;
 
-        // Game Manager // 
-        public static Action<GameState> OnGameStateChanged;
+        // Game Manager //
+        internal static Action<GameState> OnGameStateChanged;
 
     }
 }

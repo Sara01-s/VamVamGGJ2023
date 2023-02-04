@@ -24,20 +24,19 @@ namespace VamVamGGJ {
         public void OnApplicationQuit() => Application.Quit();
 
         private void OnEnable() {
-           EventDispatcher.OnTogglePause += TogglePause;
-           EventDispatcher.OnGameStateChanged += UpdateUI;
+            EventDispatcher.OnTogglePause += TogglePause;
+            EventDispatcher.OnGameStateChanged += UpdateUI;
         }
-            
+
         private void OnDisable() {
-           EventDispatcher.OnTogglePause -= TogglePause;
-           EventDispatcher.OnGameStateChanged -= UpdateUI;
+            EventDispatcher.OnTogglePause -= TogglePause;
+            EventDispatcher.OnGameStateChanged -= UpdateUI;
         }
 
         public void ReloadScene() {
-           EventDispatcher.OnTogglePause?.Invoke();
+            EventDispatcher.OnTogglePause?.Invoke();
             LevelLoader.Instance.ReloadLevel();
         }
-
 
         public void SetNextState(string nextState) {
             _selectedStateInInspector = (GameState) Enum.Parse(typeof(GameState), nextState);
