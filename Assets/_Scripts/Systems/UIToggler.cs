@@ -1,7 +1,5 @@
-using UnityEngine.UI;
 using UnityEngine;
 using System;
-using TMPro;
 
 namespace VamVamGGJ {
 
@@ -16,8 +14,14 @@ namespace VamVamGGJ {
             base.Awake();
         }
 
+        private void Update() {
+
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+                TogglePause();
+            }
+        }
+
         public void OnApplicationQuit() => Application.Quit();
-        public void InvokeTogglePause() => EventDispatcher.OnTogglePause?.Invoke();
 
         private void OnEnable() {
            EventDispatcher.OnTogglePause += TogglePause;
@@ -36,7 +40,7 @@ namespace VamVamGGJ {
 
 
         public void SetNextState(string nextState) {
-            _selectedStateInInspector = (GameState)Enum.Parse(typeof(GameState), nextState);
+            _selectedStateInInspector = (GameState) Enum.Parse(typeof(GameState), nextState);
         }
 
         public void LoadScene(int index) {

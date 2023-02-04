@@ -27,14 +27,8 @@ namespace VamVamGGJ {
                 case 0: // Main title
                     UpdateGameState(GameState.OnMainMenu);
                 break;
-                case 1: // Level Selection
-                    UpdateGameState(GameState.SelectingLevel);
-                break;
-                case 2: // In-Game
+                case 1: // In-Game
                     UpdateGameState(GameState.Playing);
-                break;
-                case 3: // Score window
-                    UpdateGameState(GameState.ShowingScore);
                 break;
             }
         #else
@@ -49,9 +43,6 @@ namespace VamVamGGJ {
                 case GameState.OnMainMenu:
                     HandleMainMenu();
                 break;
-                case GameState.SelectingLevel:
-                    HandleLevelSelection();
-                break;
                 case GameState.Playing:
                     HandlePlayingState();
                 break;
@@ -60,9 +51,6 @@ namespace VamVamGGJ {
                 break;
                 case GameState.Fail:
                     HandleFail();
-                break;
-                case GameState.ShowingScore:
-                    HandleScoreState();
                 break;
                 case GameState.LoadingScreen:
                     HandleLoading();
@@ -84,20 +72,12 @@ namespace VamVamGGJ {
             CanTogglePause = false;
         }
 
-        private void HandleLevelSelection() {
-            CanTogglePause = false;
-        }
-
         private void HandlePlayingState() {
             CanTogglePause = true;
         }
 
         private void HandlePause() {
             CanTogglePause = true;
-        }
-
-        private void HandleScoreState() {
-            CanTogglePause = false;
         }
 
         private void HandleFail() {
