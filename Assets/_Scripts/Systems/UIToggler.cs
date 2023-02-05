@@ -6,6 +6,7 @@ namespace VamVamGGJ {
     public sealed class UIToggler : Singleton<UIToggler> {
 
         [SerializeField] private GameObject _mainMenu, _settingsMenu, _pauseMenu;
+        public GameObject _gameOverMenu, _victoryMenu;
 
         private GameState _selectedStateInInspector;
         private bool _isPaused = false;
@@ -63,6 +64,17 @@ namespace VamVamGGJ {
             } 
 
             Time.timeScale = (_isPaused) ? 0 : 1;
+        }
+
+        public void MainMenuActivator(){
+            _mainMenu.gameObject.SetActive(true);
+        }
+
+        public void UIMenuDesactivator(int _numeroIngresado){
+            if (_numeroIngresado == 1)
+            _gameOverMenu.gameObject.SetActive(false);
+            if (_numeroIngresado == 2)
+            _victoryMenu.gameObject.SetActive(false);
         }
 
         private void UpdateUI(GameState newState) {
