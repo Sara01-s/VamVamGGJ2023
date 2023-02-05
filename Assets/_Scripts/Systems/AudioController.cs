@@ -9,9 +9,25 @@ namespace VamVamGGJ {
         [SerializeField] private AudioSource _musicSource;
         [SerializeField] private AudioSource _sfxSource;
 
+
+        private float _masterFloatValue, _musicFloatValue, _sfxFloatValue;
+
         private const float MIN_VOLUME_VALUE = 0.00001F;
 
-        protected override void Awake() => base.Awake();
+        protected override void Awake(){
+            base.Awake();
+
+            _masterFloatValue = PlayerPrefs.GetFloat("MasterFloatValue");
+            _musicFloatValue = PlayerPrefs.GetFloat("MusicFloatValue");
+            _sfxFloatValue = PlayerPrefs.GetFloat("SFXFloatValue");
+        } 
+
+        public void SaveVolumeValues(){
+
+            PlayerPrefs.SetFloat("MasterFloatValue", _masterFloatValue);
+            PlayerPrefs.SetFloat("MusicFloatValue", _musicFloatValue);
+            PlayerPrefs.SetFloat("SFXFloatValue", _sfxFloatValue);
+        }
 
         // AUDIO FACADE //
 
@@ -26,6 +42,7 @@ namespace VamVamGGJ {
         // Master
         internal void ChangeMasterVolume(float value) {
             _mixer.SetFloat("MasterVolume", Mathf.Log10(value) * 20);
+            //_masterFloatValue.SetFloat(value) = value;
         }
 
         // Music
