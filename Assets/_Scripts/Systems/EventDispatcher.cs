@@ -9,6 +9,8 @@ namespace VamVamGGJ {
         // Input Manager //
         internal static Action OnTogglePause;
         internal static Action<string> OnTextSubmitted;
+        internal static Action<string> OnTextChanged;
+        internal static Action OnCharDeleted;
 
         // Game Manager //
         internal static Action<GameState> OnGameStateChanged;

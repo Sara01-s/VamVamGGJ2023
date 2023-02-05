@@ -1,15 +1,18 @@
 using Random = UnityEngine.Random;
+using System.Text;
 using UnityEngine;
+using System;
 using TMPro;
 
 namespace VamVamGGJ {
 
     internal abstract class Enemy : MonoBehaviour {
         
-        [SerializeField] protected EnemyLane _enemyLane = EnemyLane.MiddleLane; 
+        [SerializeField] protected EnemyLane _enemyLane = EnemyLane.MiddleUpLane; 
         [SerializeField] protected AnimationCurve _translationCurve;
-        [SerializeField] protected TextMeshProUGUI EnemyText;
+        [SerializeField] protected Portal _topPortal, _frontPortal;
         [SerializeField] protected float _relentization = 10f;
+        [SerializeField] protected TextMeshProUGUI _enemyTextUI;
         [SerializeField] protected Vector3 _initPos;
         [SerializeField] protected Vector3 _goalPos;
 
@@ -17,6 +20,9 @@ namespace VamVamGGJ {
         private float _animationTimePosition = 0f;
         private float _spawnedTime = 0f;
         private string _enemyWord = "";
+
+        private const string RICH_TEXT_GREEN = "<color=\"green\">";
+        private const string RICH_TEXT_RED = "<color=\"red\">";
 
 
         private void Update() {
@@ -30,24 +36,50 @@ namespace VamVamGGJ {
 
 
         private void OnEnable() {
+            EventDispatcher.OnTextChanged += ReceiveDamage;
             EventDispatcher.OnTextSubmitted += KillEnemy;
             _spawnedTime = Time.time;
         }
 
         private void OnDisable() {
             GameData.EnemyList.Remove(this);
+            EventDispatcher.OnTextChanged -= ReceiveDamage;
             EventDispatcher.OnTextSubmitted -= KillEnemy;
+        }
+
+
+        internal void ReceiveDamage(string inputText) {
+            var modifiedInputText = inputText.Replace(' ', '_');
+
+            if (_enemyWord.StartsWith(inputText)) {
+                var _lastChar = inputText.Length;
+                _enemyTextUI.text = ColorizeChar(modifiedInputText, RICH_TEXT_GREEN) + _enemyWord[_lastChar.._enemyWord.Length];
+            } 
+            else if (inputText.StartsWith(_enemyWord)) {
+                var _lastChar = _enemyWord.Length;
+                _enemyTextUI.text = ColorizeChar(modifiedInputText[0.._lastChar], RICH_TEXT_GREEN) + ColorizeChar(modifiedInputText[_lastChar..inputText.Length], RICH_TEXT_RED);
+            } 
+            else return;
+
+            _topPortal.gameObject.SetActive(true);
+            _topPortal.PlayHitAnimation();
         }
         
         internal void KillEnemy(string playerSubmittedString) {
-            print(playerSubmittedString);
-
             var validWord = playerSubmittedString != null && (playerSubmittedString.CompareTo(_enemyWord) == 0);
             if (!validWord) return;
 
             // Play death animation
             // Play death sound
+            _topPortal.gameObject.SetActive(false);
             Destroy(gameObject);
+        }
+
+        private string ColorizeChar(string inputString, string richTextColorCode) {
+            var strBuilder = new StringBuilder();
+
+            strBuilder.Append(richTextColorCode + inputString + "</color>");
+            return strBuilder.ToString();
         }
 
         private void OnTriggerEnter2D(Collider2D otherCollider) {
@@ -60,7 +92,7 @@ namespace VamVamGGJ {
         private void InitializeThisEnemy() {
             GameData.EnemyList.Add(this);
             _enemyWord = GameData.AllGameWords[Random.Range(0, GameData.AllGameWords.Count)];
-            EnemyText.text = _enemyWord;
+            _enemyTextUI.text = _enemyWord;
         }
 
     }

@@ -1,10 +1,9 @@
 namespace VamVamGGJ {
     
     internal enum EnemyLane {
-        UpLane =          4,
-        MiddleUpLane =    2,
-        MiddleLane =      0,
-        MiddleDownLane = -2,
-        DownLane =       -4,
+        UpLane =          3,
+        MiddleUpLane =    1,
+        MiddleDownLane = -1,
+        DownLane =       -3,
     }
 }

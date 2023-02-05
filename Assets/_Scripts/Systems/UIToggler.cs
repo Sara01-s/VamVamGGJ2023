@@ -39,7 +39,7 @@ namespace VamVamGGJ {
         }
 
         public void SetNextState(string nextState) {
-            _selectedStateInInspector = (GameState) Enum.Parse(typeof(GameState), nextState);
+            _selectedStateInInspector = Enum.Parse<GameState>(nextState);
         }
 
         public void LoadScene(int index) {

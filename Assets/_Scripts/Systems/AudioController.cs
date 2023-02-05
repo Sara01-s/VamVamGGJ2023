@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace VamVamGGJ {
     
-    [RequireComponent(typeof(AudioSource))]
     public sealed class AudioController : Singleton<AudioController> {
 
         [SerializeField] private AudioMixer _mixer;
@@ -14,14 +13,14 @@ namespace VamVamGGJ {
 
         protected override void Awake() => base.Awake();
 
-
         // AUDIO FACADE //
 
         public void PlaySFX(AudioClip clip) => _sfxSource.PlayOneShot(clip);
         
         public void PlayMusic(AudioClip musicClip, bool loop) {
+            _musicSource.clip = musicClip;
             _musicSource.loop = loop;
-            _musicSource.PlayOneShot(musicClip);
+            _musicSource.Play();
         }
 
         // Master
@@ -35,7 +34,7 @@ namespace VamVamGGJ {
                 _musicSource.mute = true;
             else {
                 _musicSource.mute = false;
-                _mixer.SetFloat("MusicVolume", Mathf.Log10(value) * 20);           
+                _mixer.SetFloat("MusicVolume", Mathf.Log10(value) * 20);
             }
         }
 
@@ -45,7 +44,7 @@ namespace VamVamGGJ {
                 _sfxSource.mute = true;
             else {
                 _sfxSource.mute = false;
-                _mixer.SetFloat("SFXVolume", Mathf.Log10(value) * 20);            
+                _mixer.SetFloat("SFXVolume", Mathf.Log10(value) * 20);
             }
         }
 
