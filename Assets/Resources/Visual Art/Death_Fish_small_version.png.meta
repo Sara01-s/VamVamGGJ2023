@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 14d7aaa2f71e1af46b13fcb042bd3400
+guid: 4a763e070b733a4419648f8804c23f4c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vector-shine-vfx-effect-sprite-260nw-1706121400_0
+      name: Death_Fish_small_version_14
       rect:
         serializedVersion: 2
-        x: 0
-        y: 349
-        width: 112
-        height: 126
+        x: 2152
+        y: 5
+        width: 666
+        height: 302
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,167 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5b06c981d385b24f94926e4473bae4a
-      internalID: -1254878982
+      spriteID: 8f509d4348e268248996705b724067ce
+      internalID: -272436925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vector-shine-vfx-effect-sprite-260nw-1706121400_1
+      name: Death_Fish_small_version_25
       rect:
         serializedVersion: 2
-        x: 208
-        y: 349
-        width: 135
-        height: 126
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 53e3397d75934d245abd7de99e246818
-      internalID: 1907787110
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vector-shine-vfx-effect-sprite-260nw-1706121400_2
-      rect:
-        serializedVersion: 2
-        x: 438
-        y: 249
-        width: 259
-        height: 226
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f942e11de4fe7243b04aa498c1f72f5
-      internalID: -562524064
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vector-shine-vfx-effect-sprite-260nw-1706121400_3
-      rect:
-        serializedVersion: 2
-        x: 756
-        y: 335
-        width: 67
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a2ea5845c0bde24faaa6f84e88e2430
-      internalID: 2105320497
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vector-shine-vfx-effect-sprite-260nw-1706121400_4
-      rect:
-        serializedVersion: 2
-        x: 981
-        y: 298
-        width: 100
-        height: 109
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7dd60a046998ec544aacfef1516ddafc
-      internalID: -948980916
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vector-shine-vfx-effect-sprite-260nw-1706121400_5
-      rect:
-        serializedVersion: 2
-        x: 1132
-        y: 248
-        width: 181
-        height: 228
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ff63a07c8d578c4aba1b3b01d1fa117
-      internalID: -855787665
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vector-shine-vfx-effect-sprite-260nw-1706121400_6
-      rect:
-        serializedVersion: 2
-        x: 1365
-        y: 249
-        width: 233
-        height: 226
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11aed7ee72bfb584285dee63f3a7042d
-      internalID: 1652622287
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vector-shine-vfx-effect-sprite-260nw-1706121400_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 41
-        width: 234
-        height: 228
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 60fc536578af17b499f6fb5409c8d21b
-      internalID: -133571924
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vector-shine-vfx-effect-sprite-260nw-1706121400_12
-      rect:
-        serializedVersion: 2
-        x: 293
+        x: 5150
         y: 0
-        width: 184
-        height: 197
+        width: 301
+        height: 307
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d2271675033b0e4cab52aebeacee93a
-      internalID: -211614116
+      spriteID: 717ab6e4131c087429b3030d412d906d
+      internalID: -75380908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vector-shine-vfx-effect-sprite-260nw-1706121400_13
+      name: Death_Fish_small_version_26
       rect:
         serializedVersion: 2
-        x: 524
-        y: 106
-        width: 77
-        height: 91
+        x: 5826
+        y: 0
+        width: 326
+        height: 307
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00467ace38794ad429fb80c703fc4b0d
-      internalID: -1274720639
+      spriteID: 69bbb297e8b8ae842af5272409034c67
+      internalID: -541372582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vector-shine-vfx-effect-sprite-260nw-1706121400_14
+      name: Death_Fish_small_version_27
       rect:
         serializedVersion: 2
-        x: 670
-        y: 41
-        width: 143
-        height: 121
+        x: 6556
+        y: 0
+        width: 301
+        height: 307
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c48b94d20f8996e4e91b496c01a27f79
-      internalID: 1843225898
+      spriteID: 2053b328792029942a28999995e1ed47
+      internalID: 1891401046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vector-shine-vfx-effect-sprite-260nw-1706121400_15
+      name: Death_Fish_small_version_28
       rect:
         serializedVersion: 2
-        x: 926
-        y: 41
-        width: 118
-        height: 122
+        x: 23
+        y: 22
+        width: 681
+        height: 183
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73ecb53a70c07cc4eb787ad4e12507a2
-      internalID: 399741156
+      spriteID: 5a01e80b598cc80499a2a3a7614461c8
+      internalID: 1823560143
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vector-shine-vfx-effect-sprite-260nw-1706121400_16
+      name: Death_Fish_small_version_34
       rect:
         serializedVersion: 2
-        x: 1157
-        y: 41
-        width: 109
-        height: 110
+        x: 743
+        y: 2
+        width: 654
+        height: 134
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,20 +223,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01bfbbeb4c6b45649b99808a7716988a
-      internalID: -1837082770
+      spriteID: 229bb29340d03f04d9601638b93844be
+      internalID: -612887324
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vector-shine-vfx-effect-sprite-260nw-1706121400_17
+      name: Death_Fish_small_version_35
       rect:
         serializedVersion: 2
-        x: 1364
-        y: 41
-        width: 234
-        height: 110
+        x: 1442
+        y: 5
+        width: 668
+        height: 131
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -391,8 +244,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42146e71aa57d3f46bf93951cc81bef6
-      internalID: 1910754652
+      spriteID: f8f475a7feb1c9041b99af3a84997a96
+      internalID: 869873121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_Fish_small_version_36
+      rect:
+        serializedVersion: 2
+        x: 2863
+        y: 0
+        width: 665
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e33691c6b92cb5469b2857c8bc80d35
+      internalID: 1837739374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_Fish_small_version_37
+      rect:
+        serializedVersion: 2
+        x: 3568
+        y: 5
+        width: 668
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1480e1a64588a0e448eabaad65f9031a
+      internalID: 1015525659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_Fish_small_version_38
+      rect:
+        serializedVersion: 2
+        x: 4277
+        y: 5
+        width: 668
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cd7631fa097c704f863abda92baf194
+      internalID: -615800857
       vertices: []
       indices: 
       edges: []
@@ -408,24 +324,54 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      vector-shine-vfx-effect-sprite-260nw-1706121400_16: -1837082770
-      vector-shine-vfx-effect-sprite-260nw-1706121400_6: 1652622287
-      vector-shine-vfx-effect-sprite-260nw-1706121400_15: 399741156
-      vector-shine-vfx-effect-sprite-260nw-1706121400_5: -855787665
-      vector-shine-vfx-effect-sprite-260nw-1706121400_2: -562524064
-      vector-shine-vfx-effect-sprite-260nw-1706121400_0: -1254878982
-      vector-shine-vfx-effect-sprite-260nw-1706121400_17: 1910754652
-      vector-shine-vfx-effect-sprite-260nw-1706121400_1: 1907787110
-      vector-shine-vfx-effect-sprite-260nw-1706121400_11: 824142965
-      vector-shine-vfx-effect-sprite-260nw-1706121400_12: -211614116
-      vector-shine-vfx-effect-sprite-260nw-1706121400_13: -1274720639
-      vector-shine-vfx-effect-sprite-260nw-1706121400_8: -133571924
-      vector-shine-vfx-effect-sprite-260nw-1706121400_9: -743052644
-      vector-shine-vfx-effect-sprite-260nw-1706121400_10: 1667614086
-      vector-shine-vfx-effect-sprite-260nw-1706121400_14: 1843225898
-      vector-shine-vfx-effect-sprite-260nw-1706121400_3: 2105320497
-      vector-shine-vfx-effect-sprite-260nw-1706121400_4: -948980916
-      vector-shine-vfx-effect-sprite-260nw-1706121400_7: -152593146
+      Death_Fish_small_version_24: -427616266
+      Death_Fish_small_version_6: -889278373
+      Death_Fish_small_version_13: -1645584592
+      Death_Fish_small_version_2: -72490494
+      Death_Fish_small_version_37: 1015525659
+      Death_Fish_small_version_22: 1889828132
+      Death_Fish_small_version_41: -987902307
+      Death_Fish_small_version_42: -651495858
+      Death_Fish_small_version_38: -615800857
+      Death_Fish_small_version_26: -541372582
+      Death_Fish_small_version_3: 575832216
+      Death_Fish_small_version_25: -75380908
+      Death_Fish_small_version_31: -798030822
+      Death_Fish_small_version_14: -272436925
+      Death_Fish_small_version_39: -1220724390
+      Death_Fish_small_version_1: -1924194634
+      Death_Fish_small_version_16: 278370690
+      Death_Fish_small_version_4: -2038357991
+      Death_Fish_small_version_5: -1944885928
+      Death_Fish_small_version_0: 1414952910
+      Death_Fish_small_version_45: -204255538
+      Death_Fish_small_version_32: 231357408
+      Death_Fish_small_version_36: 1837739374
+      Death_Fish_small_version_40: 1783871671
+      Death_Fish_small_version_34: -612887324
+      Death_Fish_small_version_11: -69204868
+      Death_Fish_small_version_19: -30632462
+      Death_Fish_small_version_30: -818711949
+      Death_Fish_small_version_43: -1113637292
+      Death_Fish_small_version_8: 1490353007
+      Death_Fish_small_version_15: 1972073347
+      Death_Fish_small_version_18: -1816010512
+      Death_Fish_small_version_23: -1111201340
+      Death_Fish_small_version_29: 123508694
+      Death_Fish_small_version_46: -385846365
+      Death_Fish_small_version_27: 1891401046
+      Death_Fish_small_version_47: 1611293856
+      Death_Fish_small_version_9: -557449076
+      Death_Fish_small_version_44: 35344346
+      Death_Fish_small_version_21: -843400436
+      Death_Fish_small_version_10: -1665958230
+      Death_Fish_small_version_33: 2134507710
+      Death_Fish_small_version_17: -1984299836
+      Death_Fish_small_version_28: 1823560143
+      Death_Fish_small_version_35: 869873121
+      Death_Fish_small_version_7: -797014042
+      Death_Fish_small_version_12: -112233516
+      Death_Fish_small_version_20: 404927437
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

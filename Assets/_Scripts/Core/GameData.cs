@@ -4,12 +4,13 @@ using UnityEngine;
 namespace VamVamGGJ {
 
     [RequireComponent(typeof(BoxCollider2D))]
-    internal sealed class GameData : MonoBehaviour {
+    internal sealed class GameData : Singleton<GameData> {
 
         internal static List<Enemy> EnemyList = new List<Enemy>();
         internal static BoxCollider2D EnemyActivationCollider;
 
-        private void Awake() {
+        protected override void Awake() {
+            base.Awake();
             EnemyActivationCollider = GetComponent<BoxCollider2D>();
         }
 
@@ -38,6 +39,10 @@ namespace VamVamGGJ {
             "dog",
             "sea",
         };
+
+        [SerializeField] public List<AudioClip> AllHitSounds;
+        [SerializeField] public List<AudioClip> AllFinalHitSounds;
+
 
 
     }

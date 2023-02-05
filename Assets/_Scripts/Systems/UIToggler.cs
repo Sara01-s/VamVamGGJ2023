@@ -53,8 +53,14 @@ namespace VamVamGGJ {
             _isPaused = !_isPaused;
             _pauseMenu.SetActive(_isPaused);
 
-            if (_isPaused) GameStateChanger.Instance.UpdateGameState(GameState.Paused);
-            else GameStateChanger.Instance.UpdateGameState(GameState.Playing);
+            if (_isPaused) {
+                GameStateChanger.Instance.UpdateGameState(GameState.Paused);
+                AudioController.Instance.PauseMusic();
+            }
+            else {
+                GameStateChanger.Instance.UpdateGameState(GameState.Playing);
+                AudioController.Instance.ResumeMusic();
+            } 
 
             Time.timeScale = (_isPaused) ? 0 : 1;
         }

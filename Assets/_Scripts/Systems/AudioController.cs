@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace VamVamGGJ {
     
-    public sealed class AudioController : Singleton<AudioController> {
+    internal sealed class AudioController : Singleton<AudioController> {
 
         [SerializeField] private AudioMixer _mixer;
         [SerializeField] private AudioSource _musicSource;
@@ -15,21 +15,21 @@ namespace VamVamGGJ {
 
         // AUDIO FACADE //
 
-        public void PlaySFX(AudioClip clip) => _sfxSource.PlayOneShot(clip);
+        internal void PlaySFX(AudioClip clip) => _sfxSource.PlayOneShot(clip);
         
-        public void PlayMusic(AudioClip musicClip, bool loop) {
+        internal void PlayMusic(AudioClip musicClip, bool loop) {
             _musicSource.clip = musicClip;
             _musicSource.loop = loop;
             _musicSource.Play();
         }
 
         // Master
-        public void ChangeMasterVolume(float value) {
+        internal void ChangeMasterVolume(float value) {
             _mixer.SetFloat("MasterVolume", Mathf.Log10(value) * 20);
         }
 
         // Music
-        public void ChangeMusicVolume(float value) {
+        internal void ChangeMusicVolume(float value) {
             if (value <= MIN_VOLUME_VALUE) 
                 _musicSource.mute = true;
             else {
@@ -39,7 +39,7 @@ namespace VamVamGGJ {
         }
 
         // SFX
-        public void ChangeSFXVolume(float value) {
+        internal void ChangeSFXVolume(float value) {
             if (value <= MIN_VOLUME_VALUE)
                 _sfxSource.mute = true;
             else {
@@ -48,8 +48,10 @@ namespace VamVamGGJ {
             }
         }
 
-        public void ToggleMusic() => _musicSource.mute = !_musicSource.mute;
-        public void ToggleSFX() => _sfxSource.mute = !_sfxSource.mute;
+        internal void PauseMusic() => _musicSource.Pause();
+        internal void ResumeMusic() => _musicSource.Play();
+        internal void ToggleMusic() => _musicSource.mute = !_musicSource.mute;
+        internal void ToggleSFX() => _sfxSource.mute = !_sfxSource.mute;
 
     }
 }

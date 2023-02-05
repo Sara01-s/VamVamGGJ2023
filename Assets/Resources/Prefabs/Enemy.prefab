@@ -481,6 +481,7 @@ MonoBehaviour:
   _frontPortal: {fileID: 6846511681514514328}
   _relentization: 10
   _enemyTextUI: {fileID: 1530432616}
+  _enemyAnimator: {fileID: 0}
   _initPos: {x: 11, y: 0, z: 0}
   _goalPos: {x: -10, y: 0, z: 0}
 --- !u!1 &5483480116494522571
@@ -606,7 +607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9015775072610101512
 Transform:
   m_ObjectHideFlags: 0

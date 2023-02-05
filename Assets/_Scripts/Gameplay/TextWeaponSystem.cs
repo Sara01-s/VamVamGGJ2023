@@ -9,6 +9,7 @@ namespace VamVamGGJ {
 
         [SerializeField] private TextMeshProUGUI _playerTextUI;
         [SerializeField] private float _characterLimit = 11f;
+        [SerializeField] private Animator _playerAnimator;
 
         private StringBuilder _playerInputSB = new StringBuilder();
         private Vector3 _initPlayerTextUIPosition;
@@ -22,6 +23,9 @@ namespace VamVamGGJ {
         }
 
         private void Update() {
+
+            _playerAnimator.SetBool("Hitting", false);
+            
             
             foreach (char character in Input.inputString) {
 
@@ -41,6 +45,7 @@ namespace VamVamGGJ {
                     EventDispatcher.OnTextSubmitted?.Invoke(_playerInputSB.ToString());
                     EventDispatcher.OnTextChanged?.Invoke(string.Empty);
 
+                    _playerAnimator.SetBool("Hitting", false);
                     _playerInputSB.Clear();
                     _playerTextUI.text = _playerInputSB.ToString();
 
@@ -54,6 +59,8 @@ namespace VamVamGGJ {
                         });
                         break;
                     }
+
+                    _playerAnimator.SetBool("Hitting", true);
 
                     _playerInputSB.Append(character);
                     

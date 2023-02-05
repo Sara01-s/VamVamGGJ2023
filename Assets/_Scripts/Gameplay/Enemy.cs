@@ -13,6 +13,7 @@ namespace VamVamGGJ {
         [SerializeField] protected Portal _topPortal, _frontPortal;
         [SerializeField] protected float _relentization = 10f;
         [SerializeField] protected TextMeshProUGUI _enemyTextUI;
+        [SerializeField] protected Animator _enemyAnimator;
         [SerializeField] protected Vector3 _initPos;
         [SerializeField] protected Vector3 _goalPos;
 
@@ -56,6 +57,7 @@ namespace VamVamGGJ {
 
             if (_enemyWord.StartsWith(inputText)) {
                 var _lastChar = inputText.Length;
+                transform.DOShakePosition(.1f, .3f);
                 _enemyTextUI.text = ColorizeChar(modifiedInputText, RICH_TEXT_GREEN) + _enemyWord[_lastChar.._enemyWord.Length];
             }
             else if (inputText.StartsWith(_enemyWord)) {
@@ -64,6 +66,9 @@ namespace VamVamGGJ {
                                     ColorizeChar(modifiedInputText[_lastChar..inputText.Length], RICH_TEXT_RED);
             } 
             else return;
+            
+            var randomHitSound = GameData.Instance.AllHitSounds[Random.Range(0, GameData.Instance.AllFinalHitSounds.Count)];
+            AudioController.Instance.PlaySFX(randomHitSound);
 
             _topPortal.gameObject.SetActive(true);
             _topPortal.NormalHitAnimation();
@@ -74,11 +79,15 @@ namespace VamVamGGJ {
             if (!validWord) return;
 
             // Play death sound
+            var randomFinalHitSound = GameData.Instance.AllFinalHitSounds[Random.Range(0, GameData.Instance.AllFinalHitSounds.Count)];
+            AudioController.Instance.PlaySFX(randomFinalHitSound);
 
             // Play death animation
+            _enemyAnimator.SetTrigger("EnemyDeath");
             _frontPortal.gameObject.SetActive(true);
             _topPortal.gameObject.SetActive(false);
             _topPortal.FinalHitAnimation();
+
 
             Destroy(gameObject, .5f);
         }
