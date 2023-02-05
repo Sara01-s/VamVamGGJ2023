@@ -18,7 +18,8 @@ namespace VamVamGGJ {
         [SerializeField] protected Vector3 _goalPos;
 
         
-        
+        private Camera _mainCamera;
+        private Vector3 _initCameraPosition;      
         private float _animationTimePosition = 0f;
         private float _spawnedTime = 0f;
         private string _enemyWord = "";
@@ -27,6 +28,10 @@ namespace VamVamGGJ {
         private const string RICH_TEXT_GREEN = "<color=\"green\">";
         private const string RICH_TEXT_RED = "<color=\"red\">";
 
+        private void Awake() {
+            _mainCamera = Camera.main;
+            _initCameraPosition = _mainCamera.transform.position;
+        }
 
         private void Update() {
             _initPos = new Vector3(  10f, (float) _enemyLane, 7f  );
@@ -57,7 +62,12 @@ namespace VamVamGGJ {
 
             if (_enemyWord.StartsWith(inputText)) {
                 var _lastChar = inputText.Length;
-                transform.DOShakePosition(.1f, .3f);
+
+                _mainCamera.transform.DOShakePosition(.2f, .5f).OnComplete(() => {
+                    _mainCamera.transform.position = _initCameraPosition;
+                });
+
+                transform.DOShakePosition(.1f, .15f);
                 _enemyTextUI.text = ColorizeChar(modifiedInputText, RICH_TEXT_GREEN) + _enemyWord[_lastChar.._enemyWord.Length];
             }
             else if (inputText.StartsWith(_enemyWord)) {
@@ -68,11 +78,12 @@ namespace VamVamGGJ {
             else return;
             
             var randomHitSound = GameData.Instance.AllHitSounds[Random.Range(0, GameData.Instance.AllFinalHitSounds.Count)];
-            AudioController.Instance.PlaySFX(randomHitSound);
+            AudioController.Instance.PlaySFX(randomHitSound, 1f);
 
             _topPortal.gameObject.SetActive(true);
             _topPortal.NormalHitAnimation();
         }
+
         
         internal void KillEnemy(string playerSubmittedString) {
             var validWord = playerSubmittedString != null && (playerSubmittedString.CompareTo(_enemyWord) == 0);
@@ -80,7 +91,7 @@ namespace VamVamGGJ {
 
             // Play death sound
             var randomFinalHitSound = GameData.Instance.AllFinalHitSounds[Random.Range(0, GameData.Instance.AllFinalHitSounds.Count)];
-            AudioController.Instance.PlaySFX(randomFinalHitSound);
+            AudioController.Instance.PlaySFX(randomFinalHitSound, 1f);
 
             // Play death animation
             //_frontPortal.gameObject.SetActive(true);
@@ -91,6 +102,7 @@ namespace VamVamGGJ {
 
             Destroy(gameObject, .5f);
         }
+
 
         private string ColorizeChar(string inputString, string richTextColorCode) {
             var strBuilder = new StringBuilder();

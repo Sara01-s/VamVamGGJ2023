@@ -33,6 +33,11 @@ namespace VamVamGGJ {
 
         internal void PlaySFX(AudioClip clip) => _sfxSource.PlayOneShot(clip);
         
+        internal void PlaySFX(AudioClip clip, float volume) {
+            _sfxSource.volume = volume;
+            _sfxSource.PlayOneShot(clip);
+        }
+
         internal void PlayMusic(AudioClip musicClip, bool loop) {
             _musicSource.clip = musicClip;
             _musicSource.loop = loop;
