@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.011, y: 0.752}
+  m_AnchoredPosition: {x: -0.011, y: 1.07}
   m_SizeDelta: {x: 710.8, y: 89.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1352382987
@@ -431,8 +431,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4, y: 1.24}
-    newSize: {x: 0.4, y: 1.25}
+    oldSize: {x: 6.7636733, y: 1.7700001}
+    newSize: {x: 6.7636733, y: 1.7700001}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -549,7 +549,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.4, y: 1.25}
+  m_Size: {x: 6.7636733, y: 1.7700001}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -564,6 +564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 461910938327350328}
+  - component: {fileID: 3122041905949178326}
   - component: {fileID: 1234649730678295820}
   m_Layer: 0
   m_Name: Sprite
@@ -580,13 +581,33 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5483480116494522571}
   m_LocalRotation: {x: -0, y: -0, z: 0.0000004768371, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.27174875, y: 0.31057, z: 0.31057}
+  m_LocalPosition: {x: -0.151, y: 0.187, z: 0}
+  m_LocalScale: {x: 0.45683682, y: 0.52209926, z: 0.52209926}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8452639818356529207}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &3122041905949178326
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5483480116494522571}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 76d36b21bb9bf2e448d8cd9a9b8111ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &1234649730678295820
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -628,7 +649,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8a7f0ba99536e074bbf5e22ff7763421, type: 3}
+  m_Sprite: {fileID: -1485320829, guid: 606b4e765c87478459d09bd8b010f070, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
