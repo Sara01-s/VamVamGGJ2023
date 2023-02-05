@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: March
+  m_Name: PortalNormalHit
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,13 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: -1485320829, guid: 606b4e765c87478459d09bd8b010f070, type: 3}
-    - time: 0.16666667
+    - time: 0.21666667
       value: {fileID: 1366066213, guid: 606b4e765c87478459d09bd8b010f070, type: 3}
-    - time: 0.33333334
+    - time: 0.41666666
       value: {fileID: 778385058, guid: 606b4e765c87478459d09bd8b010f070, type: 3}
-    - time: 0.5
+    - time: 0.6333333
       value: {fileID: 1894975039, guid: 606b4e765c87478459d09bd8b010f070, type: 3}
-    - time: 0.6666667
+    - time: 0.8333333
       value: {fileID: -1007310733, guid: 606b4e765c87478459d09bd8b010f070, type: 3}
     attribute: m_Sprite
     path: 
@@ -58,7 +58,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.68333334
+    m_StopTime: 0.84999996
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

@@ -17,6 +17,7 @@ namespace VamVamGGJ {
         [SerializeField] protected Vector3 _goalPos;
 
         
+        
         private float _animationTimePosition = 0f;
         private float _spawnedTime = 0f;
         private string _enemyWord = "";
@@ -65,7 +66,7 @@ namespace VamVamGGJ {
             else return;
 
             _topPortal.gameObject.SetActive(true);
-            _topPortal.PlayHitAnimation();
+            _topPortal.NormalHitAnimation();
         }
         
         internal void KillEnemy(string playerSubmittedString) {
@@ -73,6 +74,9 @@ namespace VamVamGGJ {
             if (!validWord) return;
 
             // Play death animation
+
+
+
             // Play death sound
             _topPortal.gameObject.SetActive(false);
             Destroy(gameObject);

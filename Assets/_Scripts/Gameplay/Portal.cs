@@ -5,20 +5,21 @@ namespace VamVamGGJ {
     [RequireComponent(typeof(Animator))]
     internal sealed class Portal : MonoBehaviour {
 
-        private Animator _animator;
+        [SerializeField] private Animator _animator;
 
-        private void OnEnable() => EventDispatcher.OnTextSubmitted += Foo;
-        private void OnDisable() => EventDispatcher.OnTextSubmitted -= Foo;
-
-        private void Foo(string s) {
-            
+        private void Awake() {
+            gameObject.GetComponent<Animator>();
         }
 
-        internal void PlayHitAnimation() {
-            // _animator.SetTrigger("Hit");
+        /*private void OnEnable() => EventDispatcher.OnTextSubmitted += FinalHitAnimation;
+        private void OnDisable() => EventDispatcher.OnTextSubmitted -= FinalHitAnimation;*/
+
+        internal void FinalHitAnimation() {
+            _animator.SetTrigger("PortalFinalHit");
         }
 
-
-
+        internal void NormalHitAnimation() {
+            _animator.SetTrigger("PortalNormalHit");
+        }
     }
 }
