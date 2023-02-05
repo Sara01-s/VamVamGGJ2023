@@ -10,9 +10,5 @@ namespace VamVamGGJ {
             AudioController.Instance.PlayMusic(_mainMenuClip, true);
         }
 
-        private void Update(){
-            
-        }
-
     }
 }

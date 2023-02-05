@@ -1,7 +1,7 @@
 using Random = UnityEngine.Random;
 using System.Text;
 using UnityEngine;
-using System;
+using DG.Tweening;
 using TMPro;
 
 namespace VamVamGGJ {
@@ -20,14 +20,15 @@ namespace VamVamGGJ {
         private float _animationTimePosition = 0f;
         private float _spawnedTime = 0f;
         private string _enemyWord = "";
+        private bool _isInitiliazed = false;
 
         private const string RICH_TEXT_GREEN = "<color=\"green\">";
         private const string RICH_TEXT_RED = "<color=\"red\">";
 
 
         private void Update() {
-            _initPos = new Vector3(  10f, (float) _enemyLane, 0f  );
-            _goalPos = new Vector3( -10f, (float) _enemyLane, 0f  );
+            _initPos = new Vector3(  10f, (float) _enemyLane, 7f  );
+            _goalPos = new Vector3( -10f, (float) _enemyLane, 7f  );
 
             _animationTimePosition += Time.deltaTime;
             transform.localPosition = Vector3.Lerp(_initPos, _goalPos,
@@ -49,6 +50,7 @@ namespace VamVamGGJ {
 
 
         internal void ReceiveDamage(string inputText) {
+            if (!_isInitiliazed) return;
             var modifiedInputText = inputText.Replace(' ', '_');
 
             if (_enemyWord.StartsWith(inputText)) {
@@ -91,6 +93,7 @@ namespace VamVamGGJ {
         }
 
         private void InitializeThisEnemy() {
+            _isInitiliazed = true;
             GameData.EnemyList.Add(this);
             _enemyWord = GameData.AllGameWords[Random.Range(0, GameData.AllGameWords.Count)];
             _enemyTextUI.text = _enemyWord;

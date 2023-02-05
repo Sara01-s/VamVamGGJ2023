@@ -13,7 +13,20 @@ namespace VamVamGGJ {
             EnemyActivationCollider = GetComponent<BoxCollider2D>();
         }
 
-        internal static readonly List<string> AllGameWords = new List<string> {
+        internal static List<string> AllGameWords = new List<string> {
+            "building",
+            "old man",
+            "hello",
+            "house",
+            "water",
+            "stick",
+            "fish",
+            "tree",
+            "dog",
+            "sea",
+        };
+
+        internal static List<string> HarderWords = new List<string> {
             "building",
             "old man",
             "hello",
