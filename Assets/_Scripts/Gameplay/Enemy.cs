@@ -54,10 +54,11 @@ namespace VamVamGGJ {
             if (_enemyWord.StartsWith(inputText)) {
                 var _lastChar = inputText.Length;
                 _enemyTextUI.text = ColorizeChar(modifiedInputText, RICH_TEXT_GREEN) + _enemyWord[_lastChar.._enemyWord.Length];
-            } 
+            }
             else if (inputText.StartsWith(_enemyWord)) {
                 var _lastChar = _enemyWord.Length;
-                _enemyTextUI.text = ColorizeChar(modifiedInputText[0.._lastChar], RICH_TEXT_GREEN) + ColorizeChar(modifiedInputText[_lastChar..inputText.Length], RICH_TEXT_RED);
+                _enemyTextUI.text = ColorizeChar(modifiedInputText[0.._lastChar], RICH_TEXT_GREEN) +
+                                    ColorizeChar(modifiedInputText[_lastChar..inputText.Length], RICH_TEXT_RED);
             } 
             else return;
 
