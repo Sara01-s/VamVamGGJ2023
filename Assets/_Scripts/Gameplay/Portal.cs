@@ -11,14 +11,14 @@ namespace VamVamGGJ {
             _animator = gameObject.GetComponent<Animator>();
         }
 
-        internal void FinalHitAnimation() {
-            _animator.SetTrigger("PortalFinalHit");
-            print("ANIMACION PORTAL FINAL HIT");
-        }
-
         internal void NormalHitAnimation() {
             _animator.SetTrigger("PortalNormalHit");
             print("ANIMACION NORMAL HIT");
+        }
+
+        internal void FinalHitAnimation() {
+            _animator.SetTrigger("PortalFinalHit");
+            print("ANIMACION PORTAL FINAL HIT");
         }
     }
 }

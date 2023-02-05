@@ -83,8 +83,8 @@ namespace VamVamGGJ {
             AudioController.Instance.PlaySFX(randomFinalHitSound);
 
             // Play death animation
+            //_frontPortal.gameObject.SetActive(true);
             _enemyAnimator.SetTrigger("EnemyDeath");
-            _frontPortal.gameObject.SetActive(true);
             _topPortal.gameObject.SetActive(false);
             _topPortal.FinalHitAnimation();
 

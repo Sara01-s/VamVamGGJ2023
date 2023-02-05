@@ -6,7 +6,7 @@ namespace VamVamGGJ {
 
         [SerializeField] private AudioClip _firstWaveClip;
 
-        private void Awake() {
+        public void PlayFirstWaveMusic() {
             AudioController.Instance.PlayMusic(_firstWaveClip, false);
         }
 
