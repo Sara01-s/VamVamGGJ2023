@@ -8,18 +8,17 @@ namespace VamVamGGJ {
         [SerializeField] private Animator _animator;
 
         private void Awake() {
-            gameObject.GetComponent<Animator>();
+            _animator = gameObject.GetComponent<Animator>();
         }
-
-        /*private void OnEnable() => EventDispatcher.OnTextSubmitted += FinalHitAnimation;
-        private void OnDisable() => EventDispatcher.OnTextSubmitted -= FinalHitAnimation;*/
 
         internal void FinalHitAnimation() {
             _animator.SetTrigger("PortalFinalHit");
+            print("ANIMACION PORTAL FINAL HIT");
         }
 
         internal void NormalHitAnimation() {
             _animator.SetTrigger("PortalNormalHit");
+            print("ANIMACION NORMAL HIT");
         }
     }
 }

@@ -73,13 +73,14 @@ namespace VamVamGGJ {
             var validWord = playerSubmittedString != null && (playerSubmittedString.CompareTo(_enemyWord) == 0);
             if (!validWord) return;
 
-            // Play death animation
-
-
-
             // Play death sound
+
+            // Play death animation
+            _frontPortal.gameObject.SetActive(true);
             _topPortal.gameObject.SetActive(false);
-            Destroy(gameObject);
+            _topPortal.FinalHitAnimation();
+
+            Destroy(gameObject, .5f);
         }
 
         private string ColorizeChar(string inputString, string richTextColorCode) {
